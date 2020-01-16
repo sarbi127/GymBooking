@@ -20,6 +20,8 @@ namespace GymBookingNC19.Data
                 var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
+
+                //Create Role
                 var roleNames = new[] { "Admin", "Member" };
 
                 foreach (var name in roleNames)
@@ -36,6 +38,7 @@ namespace GymBookingNC19.Data
                     }
                 }
 
+                // Add Admin Role
                 var adminEmails = new[] { "admin@gym.se" };
 
                 foreach (var email in adminEmails)
@@ -51,8 +54,7 @@ namespace GymBookingNC19.Data
                     {
                         throw new Exception(string.Join("\n", addUserResult.Errors));
                     }
-
-                  
+               
                 }
 
                 //Todo: refactor
